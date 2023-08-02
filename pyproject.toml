@@ -43,6 +43,10 @@ warn_return_any = true
     help = "Run the server for develop"
     cmd  = "uvicorn main:app --reload"
 
+    [tool.poe.tasks.console]
+    help = "Run the interactive python console"
+    cmd  = "ipython"
+
     [tool.poe.tasks.fmt-black]
     help = "Run black on the code base"
     cmd  = "black ."
