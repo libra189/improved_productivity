@@ -1,0 +1,74 @@
+[tool.poetry]
+name = "improved-productivity"
+version = "0.1.0"
+description = ""
+authors = ["libra189 <libra189@gmail.com>"]
+readme = "README.md"
+packages = [{include = "improved_productivity"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = "^0.100.1"
+uvicorn = "^0.23.2"
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.7.0"
+isort = "^5.12.0"
+mypy = "^1.4.1"
+flake8 = "^6.1.0"
+pytest = "^7.4.0"
+ipython = "^8.14.0"
+
+[tool.black]
+line-length = 120
+target-version = ['py311']
+exclude = '''
+(
+    .venv
+)
+'''
+
+[tool.isort]
+profile = "black"
+line_length = 120
+
+[tool.mypy]
+python_version = "3.11"
+ignore_missing_imports = true
+check_untyped_defs = true
+warn_return_any = true
+
+[tool.poe.tasks]
+    [tool.poe.tasks.start]
+    help = "Run the server for develop"
+    cmd  = "uvicorn main:app --reload"
+
+    [tool.poe.tasks.fmt-black]
+    help = "Run black on the code base"
+    cmd  = "black ."
+
+    [tool.poe.tasks.fmt-isort]
+    help = "Run isort on the code base"
+    cmd  = "isort ."
+
+    [tool.poe.tasks.fmt]
+    help     = "Run formating tools on the code base"
+    sequence = ["fmt-isort", "fmt-black"]
+
+    [tool.poe.tasks.lint-flake]
+    help = "Run the linter"
+    cmd  = "flake8 ."
+
+    [tool.poe.tasks.lint-mypy]
+    help = "Run the linter"
+    cmd  = "mypy ."
+
+    [tool.poe.tasks.lint]
+    help     = "Run the linter tools"
+    sequence = ["lint-flake", "lint-mypy"]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+
