@@ -31,7 +31,7 @@ def get_users(is_active_only: bool = False) -> list[User]:
     return users
 
 
-def get_user(user_id: int) -> (User | None):
+def get_user(user_id: int) -> User | None:
     """ユーザを取得
 
     Args:
@@ -57,7 +57,7 @@ def get_items() -> list[Item]:
     return item_list
 
 
-def get_item(item_id: int) -> (Item | None):
+def get_item(item_id: int) -> Item | None:
     """アイテムを取得
 
     Args:
