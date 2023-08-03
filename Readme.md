@@ -12,7 +12,7 @@
 
 ## ToDo
 
-- [] 自動テストの導入
+- [x] 自動テストの導入
 - [] precommitの導入
   コミット前にformatterの実行, プッシュ前にlinterの実行
 - [] Github actionの導入
