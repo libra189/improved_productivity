@@ -13,9 +13,9 @@
 ## ToDo
 
 - [x] 自動テストの導入
-- [] precommitの導入
+- [x] precommitの導入
   コミット前にformatterの実行, プッシュ前にlinterの実行
-- [] Github actionの導入
+- [ ] Github actionの導入
   CIパイプラインを構築し、mainへのpull request作成時にテストを実行
-- [] 構造化ログの導入
+- [ ] 構造化ログの導入
 
