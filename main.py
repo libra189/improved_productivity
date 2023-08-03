@@ -2,8 +2,6 @@ from fastapi import FastAPI, HTTPException
 
 from app import schemas
 
-JP_TAX: float = 0.1  # 10%
-
 user_list: list[schemas.User] = [
     schemas.User(id=0, email="user0@example.com", is_active=True),
     schemas.User(id=1, email="user1@example.com", is_active=True),
