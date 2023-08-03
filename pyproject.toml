@@ -41,7 +41,7 @@ warn_return_any = true
 [tool.poe.tasks]
     [tool.poe.tasks.start]
     help = "Run the server for develop"
-    cmd  = "uvicorn main:app --reload"
+    cmd  = "uvicorn app.main:app --reload"
 
     [tool.poe.tasks.console]
     help = "Run the interactive python console"

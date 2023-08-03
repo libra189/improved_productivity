@@ -2,8 +2,8 @@ from typing import Any
 
 from fastapi import FastAPI, HTTPException
 
-from app import crud, schemas
-from app.services import item_service
+from . import crud, schemas
+from .services import item_service
 
 app = FastAPI()
 
