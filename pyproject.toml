@@ -73,6 +73,10 @@ warn_return_any = true
     help     = "Run the linter tools"
     sequence = ["lint-flake", "lint-mypy"]
 
+    [tool.poe.tasks.test]
+    help = "Run the test"
+    cmd  = "pytest"
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
