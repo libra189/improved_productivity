@@ -3,6 +3,7 @@ from typing import Any
 from fastapi import FastAPI, HTTPException
 
 from app import crud, schemas
+from app.services import item_service
 
 app = FastAPI()
 
@@ -31,9 +32,7 @@ def get_price_including_tax(id: int) -> Any:
     if item is None:
         raise HTTPException(status_code=404, detail="Item not found")
 
-    ret = item.model_dump()
-    ret.update(tax=item.tax(), selling_price=item.selling_price())
-    return schemas.ItemDetail(**ret)
+    return item_service.detail(item)
 
 
 @app.get("/users", response_model=list[schemas.User])

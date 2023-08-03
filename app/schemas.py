@@ -1,7 +1,5 @@
 from pydantic import BaseModel
 
-from .util import tax_rate
-
 
 class ItemBase(BaseModel):
     name: str
@@ -15,12 +13,6 @@ class ItemCreate(ItemBase):
 class Item(ItemBase):
     id: int
     user_id: int
-
-    def tax(cls) -> int:
-        return int(cls.price * tax_rate())
-
-    def selling_price(cls) -> int:
-        return cls.price + cls.tax()
 
 
 class ItemDetail(BaseModel):

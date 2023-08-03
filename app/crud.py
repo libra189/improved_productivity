@@ -8,9 +8,9 @@ user_list: list[User] = [
 
 item_list: list[Item] = [
     Item(id=1, name="Item #1", user_id=1, price=1980),
-    Item(id=2, name="Item #2", user_id=1, price=5600),
+    Item(id=2, name="Item #2", user_id=1, price=5699),
     Item(id=3, name="Item #3", user_id=1, price=110),
-    Item(id=4, name="Item #4", user_id=1, price=2000),
+    Item(id=4, name="Item #4", user_id=1, price=2038),
     Item(id=5, name="Item #5", user_id=2, price=10050),
 ]
 
@@ -31,7 +31,7 @@ def get_users(is_active_only: bool = False) -> list[User]:
     return users
 
 
-def get_user(user_id: int) -> (User | None):
+def get_user(user_id: int) -> User | None:
     """ユーザを取得
 
     Args:
@@ -57,7 +57,7 @@ def get_items() -> list[Item]:
     return item_list
 
 
-def get_item(item_id: int) -> (Item | None):
+def get_item(item_id: int) -> Item | None:
     """アイテムを取得
 
     Args:
