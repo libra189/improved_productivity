@@ -4,7 +4,10 @@ version = "0.1.0"
 description = ""
 authors = ["libra189 <libra189@gmail.com>"]
 readme = "README.md"
-packages = [{include = "improved_productivity"}]
+packages = [
+    {include = "improved_productivity"},
+    {include = "app"}
+]
 
 [tool.poetry.dependencies]
 python = "^3.11"
@@ -20,6 +23,7 @@ pytest = "^7.4.0"
 ipython = "^8.14.0"
 httpx = "^0.24.1"
 pre-commit = "^3.3.3"
+pytest-cov = "^4.1.0"
 
 [tool.black]
 line-length = 120
@@ -75,7 +79,7 @@ warn_return_any = true
 
     [tool.poe.tasks.test]
     help = "Run the test"
-    cmd  = "pytest"
+    cmd  = "pytest --cov --cov-report=xml"
 
 [build-system]
 requires = ["poetry-core"]
