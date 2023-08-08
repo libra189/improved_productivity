@@ -17,3 +17,5 @@ repos:
     hooks:
     - id: mypy
       stages: [pre-push]
+      pass_filenames: false
+      args: ["-p", "app"]

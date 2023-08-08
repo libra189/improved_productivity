@@ -71,7 +71,7 @@ warn_return_any = true
 
     [tool.poe.tasks.lint-mypy]
     help = "Run the linter"
-    cmd  = "mypy ."
+    cmd  = "mypy -p app"
 
     [tool.poe.tasks.lint]
     help     = "Run the linter tools"
