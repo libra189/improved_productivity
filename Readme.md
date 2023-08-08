@@ -10,6 +10,26 @@
 パッケージマネージャー Portry 1.5.1
 タスクランナー [Poe the Poet 0.21.1](https://poethepoet.natn.io/)
 
+## 自動実行
+
+### pre-commit
+
+- black
+- isort
+
+### pre-push
+
+- flake8
+- mypy
+
+### create marge request
+
+- pytest
+
+### approval marge request
+
+- build docker image
+
 ## ToDo
 
 - [x] 自動テストの導入
