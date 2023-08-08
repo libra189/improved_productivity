@@ -79,7 +79,7 @@ warn_return_any = true
 
     [tool.poe.tasks.test]
     help = "Run the test"
-    cmd  = "pytest --cov --cov-report=xml"
+    cmd  = "python -m pytest --cov --cov-report=xml"
 
 [build-system]
 requires = ["poetry-core"]
