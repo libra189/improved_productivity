@@ -9,6 +9,7 @@
 言語 Python 3.11
 パッケージマネージャー Portry 1.5.1
 タスクランナー [Poe the Poet 0.21.1](https://poethepoet.natn.io/)
+Github Actions ローカル実行 [act](https://github.com/nektos/act)
 
 ## 自動実行
 
@@ -33,9 +34,10 @@
 ## ToDo
 
 - [x] 自動テストの導入
-- [x] precommitの導入
+- [x] pre-commitの導入
     コミット前にformatterの実行, プッシュ前にlinterの実行
 - [ ] Github actionの導入
     - [ ] CIパイプラインを構築し、mainへのpull request作成時にテストを実行
     - [ ] pull request承認時にサービス稼働用コンテナイメージ作成
 - [ ] 構造化ログの導入
+- [ ] OpenAPIを利用した仕様書の自動生成
