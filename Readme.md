@@ -36,8 +36,9 @@ Github Actions ローカル実行 [act](https://github.com/nektos/act)
 - [x] 自動テストの導入
 - [x] pre-commitの導入
     コミット前にformatterの実行, プッシュ前にlinterの実行
+- [x] サービス稼働用コンテナイメージの作成
 - [ ] Github actionの導入
-    - [ ] CIパイプラインを構築し、mainへのpull request作成時にテストを実行
+    - [x] CIパイプラインを構築し、mainへのpull request作成時にテストを実行
     - [ ] pull request承認時にサービス稼働用コンテナイメージ作成
 - [ ] 構造化ログの導入
 - [ ] OpenAPIを利用した仕様書の自動生成
