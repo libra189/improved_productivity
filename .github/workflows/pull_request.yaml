@@ -1,4 +1,4 @@
-name: Python package
+name: Run the static analysis
 
 on:
   pull_request:
