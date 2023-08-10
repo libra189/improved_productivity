@@ -2,19 +2,27 @@ import subprocess
 
 import toml
 
-IMG_NAME: str = "improved_productivity"
 
-# イメージのバージョンをpyprojectから読み込み
-with open("./pyproject.toml", "r") as f:
-    obj = toml.load(f)
+def main():
+    """ローカル環境でコンテナイメージをビルドし、dockerhubへプッシュ"""
 
-img_version: str = obj["tool"]["poetry"]["version"]
-tag = f"{IMG_NAME}:{img_version}"
+    # イメージのバージョンをpyprojectから読み込み
+    with open("./pyproject.toml", "r") as f:
+        obj = toml.load(f)
 
-# イメージのビルド
-print("Build start.")
+    img_name = obj["tool"]["poetry"]["name"]
+    img_version = obj["tool"]["poetry"]["version"]
+    tag = f"libra189/{img_name}:{img_version}"
 
-cmd = ["docker", "build", "-t", tag, "."]
-subprocess.run(cmd)
+    # イメージのビルド
+    print("Image build.")
+    cmd = ["docker", "build", "-t", tag, "."]
+    subprocess.run(cmd)
 
-print("Build finished.")
+    print("Push image to dockerhub.")
+    cmd = ["docker", "push", tag]
+    subprocess.run(cmd)
+
+
+if __name__ == "__main__":
+    main()
