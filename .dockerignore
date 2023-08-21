@@ -1,0 +1,15 @@
+.coverage
+.editorconfig
+.flake8
+.git
+.github
+.mypy_cache
+.pre-commit-config.yaml
+.pytest_cache
+.venv
+.vscode
+__pycache__
+coverage.xml
+*.code-workspace
+Readme.md
+tests

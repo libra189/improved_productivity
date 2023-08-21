@@ -1,0 +1,35 @@
+name: Run the static analysis
+
+on:
+  pull_request:
+    branches:
+      - main
+
+
+jobs:
+  build:
+
+    runs-on: ubuntu-22.04
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python 3.11.x
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11.x"
+      - name: Install package manager
+        run: |
+          POETRY_VERSION=1.5.1 curl -sSL https://install.python-poetry.org | python -
+          echo "$HOME/.local/bin" >> $GITHUB_PATH
+      - name: Poetry install dependencies
+        run: |
+          poetry install --no-root
+      - name: Lint with flake8
+        run: |
+          poetry run flake8 .
+      - name: Lint with mypy
+        run: |
+          poetry run mypy -p app
+      - name: Test with pytest
+        run: |
+          poetry run python -m pytest --doctest-modules --junitxml=junit/test-results.xml --cov=com --cov-report=xml --cov-report=html

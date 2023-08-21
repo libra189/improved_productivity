@@ -13,6 +13,7 @@ packages = [
 python = "^3.11"
 fastapi = "^0.100.1"
 uvicorn = "^0.23.2"
+toml = "^0.10.2"
 
 [tool.poetry.group.dev.dependencies]
 black = "^23.7.0"
@@ -48,6 +49,10 @@ warn_return_any = true
     [tool.poe.tasks.start]
     help = "Run the server for develop"
     cmd  = "uvicorn app.main:app --reload"
+
+    [tool.poe.tasks.build]
+    help = "Run the docker image build for production"
+    cmd  = "python build_image.py"
 
     [tool.poe.tasks.console]
     help = "Run the interactive python console"
