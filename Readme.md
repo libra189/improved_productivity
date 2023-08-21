@@ -52,8 +52,8 @@ act --secret-file .secrets <イベント>
 - [x] pre-commitの導入
     コミット前にformatterの実行, プッシュ前にlinterの実行
 - [x] サービス稼働用コンテナイメージの作成
-- [ ] Github actionの導入
+- [x] Github actionの導入
     - [x] CIパイプラインを構築し、mainへのpull request作成時にテストを実行
-    - [ ] リリース作成時にサービス稼働用コンテナイメージ作成
+    - [x] タグプッシュ時にサービス稼働用コンテナイメージ作成
 - [ ] 構造化ログの導入
 - [ ] OpenAPIを利用した仕様書の自動生成
